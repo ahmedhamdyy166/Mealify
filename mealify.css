@@ -1,0 +1,407 @@
+/*setup of project */
+:root{
+    /* ? ######### Colors */
+    
+    /* ? ########## Fonts */
+    --font-default: "Open sans" , system-ui , -apple-system , "Segoe UI" , Roboto,
+    "Helvetica Neue" , Arial, "Noto Sans" , "Liberation Sans" , sans-serif,
+    "Apple Color Emoji" , "Segoe UI Emoji" , "Segoe UI Symbol" , "Noto Color Emoji";
+    --font-primary: "Amatic SC" , sans-serif;
+    --font-secondary: "Inter" , sans-serif;
+    
+    /*  ############ Animation */
+    
+    --animation-duration:400ms;
+}
+::before,::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+
+}
+body{
+    font-family: var(--font-default);
+    color: #212529;
+}
+a,span{
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+img{
+    display: block;
+
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--font-secondary);
+}
+ul{
+    list-style-type: none;
+}
+/* .section-bg{
+    background-color: #eee;
+} */
+.btn{
+    background-color: red;
+    border-radius: 0px 100vh 100vh;
+    padding:6px 18px;
+    font-size: 15px; 
+}
+.btn:hover{
+    background-color:rgb(255, 0, 144);
+}
+nav{
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #fff;
+    border-radius: 6px;
+    padding-left: 90px;
+}
+.body:has(.nav-Links:target) nav {
+    height: 100vh;
+    
+}
+nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    transition: transform var(--animation-duration);
+}
+.nav-Links:target{
+    transform: translateX(0);
+}
+nav .logo{
+    font-size: 30px;
+    font-family: var(--font-default);
+    cursor: pointer;
+}
+nav .logo::after{
+    content: ".";
+    color: rgba(255, 0, 0, 0.818);
+
+}
+nav ul li a{
+    font-size: 17px;
+    font-weight: 600;
+    
+    position: relative;
+}
+nav ul li a::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: red;
+    left: 0;
+    bottom: -3px;
+    transition:  width var(--animation-duration);
+}
+nav ul li a:hover::before{
+    width: 100%;
+}
+.mode .light{
+    display: none;
+}
+.mode i{
+    font-size: 25px;
+    cursor: pointer;
+}
+body:not(:has(:target)).home-link
+body:has(.home:target) .home-link,
+body:has(.chefs:target) .chefs-link,
+body:has(.gallery:target) .gallery-link,
+body:has(.contact:target) .contact-link
+
+{
+    color: #000;
+}
+body:not(:has(:target)).home-link::before,
+body:has(.home:target) .home-link::before,
+body:has(.chefs:target) .chefs-link::before,
+body:has(.galley:target) .gallery-link::before,
+body:has(.contact:target) .contact-link::before
+{  
+    width: 100%;
+}
+.menu-icon{
+    font-size: 25px;
+    display: none;
+}
+nav ul li.close-icon i {
+    display: none;
+    text-align: right;
+}
+nav ul li.close-icon {
+    font-size: 25px;
+}
+/* nav .mode  {
+
+    margin-left: auto;
+    margin-right: 20px;
+} */
+#home {
+    
+    
+    background-color: rgba(128, 128, 128, 0.252);
+    width: 100%;
+}
+main .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+  
+    
+    
+    
+}
+main .container > * {
+    width: 40%;
+    
+}
+
+main picture img{
+    width: 100%;
+    padding-top: 50px;
+    filter: drop-shadow(0px 0px 10px #0006);
+}
+main picture img:hover{
+    animation: shake 1s infinite;
+}
+@keyframes shake {
+    0%{
+        transform:translate(1px , 1px) rotate(0deg) ;
+    }
+    10%{
+        transform:translate(-1px , -2px) rotate(-1deg) ;
+    }
+    20%{
+        transform:translate(-3px , 0px) rotate(1deg) ;
+    }
+    30%{
+        transform:translate(-3px , 2px) rotate(0deg) ;
+    }
+    40%{
+        transform:translate(1px , -1px) rotate(1deg) ;
+    }
+    50%{
+        transform:translate(-1px , 2px) rotate(-1deg) ;
+    }
+    60%{
+        transform:translate(-3px , 1px) rotate(0deg) ;
+    }
+    70%{
+        transform:translate(3px , 1px) rotate(-1deg) ;
+    }
+    80%{
+        transform:translate(-1px , -1px) rotate(1deg) ;
+    }
+    90%{
+        transform:translate(1px , 2px) rotate(0deg) ;
+
+    }
+    100%{
+        transform:translate(1px , -2px) rotate(-1deg) ;
+    }
+}
+.main-content h2{
+    
+    font-family: var(--font-primary);
+    font-size: 65px;
+    margin-block: 20px;
+}
+.main-button{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.video-btn{
+    display: flex;
+    align-items: center;
+}
+.video-btn:hover{
+    color: rgba(255, 0, 0, 0.508);
+    transition: all 1s;
+}
+.video-btn .icon{
+    width: 55px;
+    height: 55px;
+    background-image: linear-gradient(to right , red 0% 50% , transparent 50% 100% );
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.video-btn .icon::before{
+    content: "";
+    position: absolute;
+    width:40px;
+    height: 40px;
+    background-color: white;
+    border-radius: inherit;
+}
+.icon i{
+    z-index: 5;
+}
+section .main-title{
+    padding-top: 20px;
+}
+.main-title{
+    text-align: center;
+    /* padding-top: 30px; */
+}
+.main-title h2{
+    text-transform: uppercase;
+    color:gray;
+    font-size: 25px;
+    
+}
+.main-title p , span{
+    font-family: var(--font-primary);
+    font-size: 45px;
+   }
+.main-title span{
+    color: rgba(255, 0, 0, 0.647);
+}
+
+.chef-cards{
+    --gap: 20px;
+    padding: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    
+    
+}
+.cards{
+    width: calc(calc(100% - var(--gap) * 2 ) /3) ;
+    border-radius: 20px;
+    
+    overflow: hidden;
+    box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.1);
+    transition: transform var(--animation-duration);
+    position: relative;
+}
+.cards:hover{
+    transform: scale(1.05);
+}
+.chef-cards .cards img{
+    width: 100%;
+}
+.card-content{
+    padding: 10px 25px 25px;
+    text-align: center;
+}
+.card-content h3{
+    font-size: 20px;
+}
+.card-content p{
+    color: rgba(128, 128, 128, 0.773);
+}
+.cards picture{
+    position: relative;
+} 
+.cards picture::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-image: url(team-shape.svg);
+    background-repeat: repeat-x;
+
+}
+.social-box{
+    background-color: #ffffff4d;
+    position: absolute;
+    right: -100px;
+    top: 40px;
+    border-radius: 5px;
+    padding: 10px 5px;
+    text-align: center;
+    transition: right var(--animation-duration);
+}
+.cards:hover .social-box{
+    right: 20px;
+}
+.social-box a{
+    padding: 10px;
+
+}
+.social-box i{
+    font-size: 20px;
+}
+.main-gallery{
+    text-align: center;
+}
+.main-gallery h2{
+    
+    color:gray;
+    font-size: 25px;
+    
+}
+.main-gallery p , span{
+    font-family: var(--font-primary);
+    font-size: 45px;
+   }
+.main-gallery span{
+    color: rgba(255, 0, 0, 0.647);
+}
+.gallery-imgs{
+    
+    --gap:20px;
+    height: 1550px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:var(--gap) ;
+}
+.gallery-imgs picture{
+    width: calc(calc(100% - var(--gap)*2)/3);
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #fff;
+    
+}
+.gallery-imgs picture:hover .layer{
+    top: 0;
+}
+.gallery-imgs img{
+    
+    width: 100%;
+
+}
+.gallery .layer{
+    width: 100%;
+    height: 100%;
+    background-color: #00000096;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: top var(--animation-duration);
+}

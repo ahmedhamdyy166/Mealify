@@ -1,0 +1,79 @@
+
+body:has(.mode input:checked){
+    background:#000 ;
+    
+    color: #fff; 
+}
+body:has(.mode input:checked) .btn{
+
+    background-color: rgba(255, 255, 0, 0.774);
+}
+body:has(.mode input:checked) .btn:hover{
+
+    background-color: rgba(255, 255, 0, 0.916);
+}
+body:has(.mode input:checked) .video-btn:hover{
+
+    color: rgba(255, 255, 0, 0.774);
+}
+body:has(.mode input:checked) .video-btn .icon{
+
+    background-image: linear-gradient(to right , rgba(255, 255, 0, 0.774) 0% 50% , transparent 50% 100% );
+}
+body:has(.mode input:checked) .video-btn .icon::before{
+    
+    background-color: #000;
+    
+}
+body:has(.mode input:checked) nav ul li a::before{
+    background-color: rgba(255, 255, 0, 0.774);
+}
+body:has(.mode input:checked) nav{
+    background-color: #000;
+}
+
+body:not(:has(:target)):has(.mode input:checked).home-link,
+body:has(.home:target) :has(.mode input:checked) .home-link,
+body:has(.chefs:target) :has(.mode input:checked) .chefs-link,
+body:has(.gallery:target) :has(.mode input:checked) .gallery-link,
+body:has(.contact:target) :has(.mode input:checked) .contact-link
+
+{
+    color: #fff;
+}
+body:not(:has(:target)).home-link::before,
+body:has(.home:target) .home-link::before,
+body:has(.chefs:target) .chefs-link::before,
+body:has(.galley:target) .gallery-link::before,
+body:has(.contact:target) .contact-link::before
+{  
+    width: 100%;
+}
+body:has(.mode input:checked) nav a:hover{
+    color: #fff;
+}
+body:has(.mode input:checked) .mode .light{
+    display: block;
+}
+body:has(.mode input:checked) .mode .dark{
+    display: none;
+}
+body:has(.mode input:checked) .social-box{
+    background-color: #ffffff4d;
+}
+body:has(.mode input:checked) .social-box i:hover{
+    background-color: #000;
+}
+body:has(.mode input:checked) .cards picture::before{
+    background-image: url(team-shape-dark.svg);
+    
+}
+body:has(.mode input:checked) .main-title span{
+    
+    color: rgba(255, 255, 0, 0.774);
+}
+
+body:has(.mode input:checked) .main-gallery span{
+    
+    color: rgba(255, 255, 0, 0.774);
+}
